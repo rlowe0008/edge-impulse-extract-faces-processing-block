@@ -1,0 +1,65 @@
+{
+    "version": 1,
+    "info": {
+        "title": "Extract faces",
+        "author": "Ross Lowe",
+        "description": "Extract faces",
+        "name": "Extract faces",
+        "cppType": "extract_faces_block",
+        "preferConvolution": true
+    },
+    "parameters": [
+        {
+            "group": "Face detection",
+            "items": [
+                {
+                    "name": "Minimum face width",
+                    "value": 15,
+                    "type": "int",
+                    "help": "Objects with a width lower than the provided width will be ignored.",
+                    "param": "min_face_width"
+                },
+                {
+                    "name": "Minimum face height",
+                    "value": 15,
+                    "type": "int",
+                    "help": "Objects with a height lower than the provided height will be ignored.",
+                    "param": "min_face_height"
+                },
+                {
+                    "name": "Minimum neighbours",
+                    "value": 3,
+                    "type": "int",
+                    "help": "Increase this value to reduce the number of false positives.",
+                    "param": "min_neighbours"
+                }
+            ]
+        },
+        {
+            "group": "Output options",
+            "items": [
+                {
+                    "name": "Output width",
+                    "value": 96,
+                    "type": "int",
+                    "help": "The detected faces will be rescaled to the given width.",
+                    "param": "output_width"
+                },
+                {
+                    "name": "Output height",
+                    "value": 96,
+                    "type": "int",
+                    "help": "The detected faces will be rescaled to the given height.",
+                    "param": "output_height"
+                },
+                {
+                    "name": "Greyscale",
+                    "value": false,
+                    "type": "boolean",
+                    "help": "Output the features in greyscale or RGB.",
+                    "param": "output_grey"
+                }
+            ]
+        }
+    ]
+}
