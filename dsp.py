@@ -72,6 +72,12 @@ def generate_features(draw_graphs, raw_data, axes, sampling_freq, min_face_width
     features = np.asarray(final_face) / 255.0
     if (output_grey):
         features = features.reshape(output_width * output_height)
+        channels = 1
     else:
         features = features.reshape(output_width * output_height * 3)
-    return { 'features': features.tolist(), 'graphs': graphs }
+        channels = 3
+
+    image_config = { 'width': output_width, 'height': output_height, 'channels': channels }
+    output_config = { 'type': 'image', 'dimensions': image_config }
+
+    return { 'features': features.tolist(), 'graphs': graphs, 'output_config': output_config }
