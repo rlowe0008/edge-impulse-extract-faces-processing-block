@@ -78,6 +78,6 @@ def generate_features(draw_graphs, raw_data, axes, sampling_freq, min_face_width
         channels = 3
 
     image_config = { 'width': output_width, 'height': output_height, 'channels': channels }
-    output_config = { 'type': 'image', 'dimensions': image_config }
+    output_config = { 'type': 'image', 'shape': image_config }
 
     return { 'features': features.tolist(), 'graphs': graphs, 'output_config': output_config }
